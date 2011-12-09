@@ -1,0 +1,21 @@
+<query id="getNewsletterDetails" action="select">
+    <tables>
+        <table name="newsletter" />
+    </tables>
+    <columns>
+        <column name="news_srl" />
+        <column name="sender_srl" />
+        <column name="title" />
+        <column name="content" />
+        <column name="members_list_to" />
+        <column name="members_list_cc" />
+        <column name="members_list_bcc" />
+        <column name="file_attach" />
+        <column name="save_date" />
+        <column name="update_date" />
+        <column name="send_date" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="news_srl" var="news_srl" notnull="notnull" />
+    </conditions>
+</query>

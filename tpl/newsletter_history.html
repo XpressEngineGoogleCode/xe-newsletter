@@ -1,0 +1,56 @@
+<!--#include("./newsletter_header.html")-->
+<form action="{getUrl('','module','admin','act','dispNewsletterAdminIndex')}" method="post">
+    <input type="hidden" name="act" value="dispNewsletterAdminIndex" />
+    <input type="hidden" name="news_srl" id="news_srl" value="" />
+</form>
+<form  method="post">
+    <input type="hidden" name="module" value="newsletter" />
+    <input type="hidden" name="act" value="procNewsletterAdminSend" />
+    <input type="hidden" name="news_srl" id="news_srl_send" value="" />
+</form>
+<form method="post">
+    <input type="hidden" name="module" value="newsletter" />
+    <input type="hidden" name="act" value="procNewsletterAdminSendAndCopy" />
+    <input type="hidden" name="news_srl" id="news_srl_resend" value="" />
+</form>
+<table class="newsletter_history">
+    <thead>
+        <tr>
+            <th>{$lang->title}</th>
+            <th>{$lang->content}</th>
+            <th>{$lang->members_list_to}</th>
+            <th>{$lang->members_list_cc}</th>
+            <th>{$lang->members_list_bcc}</th>
+            <th>{$lang->file_srl}</th>
+            <th>{$lang->save_date}</th>
+            <th>{$lang->update_date}</th>
+            <th>{$lang->send_date}</th>
+            <th>{$lang->operations}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--@for($i=0;$i<count($extra_vars);$i++)-->
+        <!--@if ($i % 2) { $class_name = "odd"; } else {$class_name = "even";}--><!--@end-->
+        <tr class="{$class_name}" id="{$extra_vars[$i]->news_srl}">
+            <td>{$extra_vars[$i]->title}</td>
+            <td>{$extra_vars[$i]->content}</td>
+            <td>{$extra_vars[$i]->members_list_to}</td>
+            <td>{$extra_vars[$i]->members_list_cc}</td>
+            <td>{$extra_vars[$i]->members_list_bcc}</td>
+            <td><a href="{$extra_vars[$i]->download_link}" >{$extra_vars[$i]->source_filename}</a></td>
+            <td>{zdate($extra_vars[$i]->save_date)}</td>
+            <td>{zdate($extra_vars[$i]->update_date)}</td>
+            <td>{zdate($extra_vars[$i]->send_date)}</td>
+            <td>
+                <div title="{$lang->title_settingButton}" class="buttonSet buttonSetting" onclick="doFormWithDetails({$extra_vars[$i]->news_srl})"></div>
+                <!--@if($extra_vars[$i]->send_date=="" || $extra_vars[$i]->send_date==null)-->
+                <div title="{$lang->title_sendButton}" class="button_send" onclick="doSendNewsletter({$extra_vars[$i]->news_srl})"></div>
+                <!--@end-->
+                <!--@if($extra_vars[$i]->send_date!="" && $extra_vars[$i]->send_date!=null)-->
+                <div title="{$lang->title_resendButton}" class="button_resend" onclick="doSendAgainNewsletter({$extra_vars[$i]->news_srl})"></div>
+                <!--@end-->
+            </td>
+        </tr>
+        <!--@end-->
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions>
+        <permission action="procNewsletterAdminInsert" target="manager" />
+    </permissions>
+    <actions>
+        <action name="dispNewsletterAdminIndex" type="view" index="true" standalone="true" admin_index="true" menu_name="newsletter" menu_index="true" />
+        <action name="dispNewsletterAdminHistory" type="view" menu_name="newsletter" />
+        <action name="procNewsletterAdminInsert" type="controller" />
+        <action name="procNewsletterAdminInsertAndSend" type="controller" />
+        <action name="procNewsletterAdminUpdate" type="controller" />
+        <action name="procNewsletterAdminUpdateAndSend" type="controller" />
+        <action name="procNewsletterAdminSend" type="controller" />
+        <action name="procNewsletterAdminSendAndCopy" type="controller" />
+    </actions>
+    <menus>
+        <menu name="newsletter">
+            <title xml:lang="en">Newsletter</title>
+        </menu>
+    </menus>
+</module>

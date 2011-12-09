@@ -1,0 +1,18 @@
+<query id="insertNewNewsletter" action="insert">
+    <tables>
+        <table name="newsletter" />
+    </tables>
+    <columns>
+        <column name="news_srl" var="newsletter_srl" />
+        <column name="sender_srl" var="sender_srl" />
+        <column name="title" var="title" />
+        <column name="content" var="content" />
+        <column name="members_list_to" var="members_list_to" />
+        <column name="members_list_cc" var="members_list_cc" />
+        <column name="members_list_bcc" var="members_list_bcc" />
+        <column name="file_attach" var="file_attach" />
+        <column name="save_date" var="save_date" />
+        <column name="update_date" var="update_date" />
+        <column name="send_date" var="send_date" />
+    </columns>
+</query>

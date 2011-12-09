@@ -1,0 +1,13 @@
+<query id="getMembersNicknames" action="select">
+    <tables>
+        <table name="member" />
+    </tables>
+    <columns>
+        <column name="member_srl" />
+        <column name="nick_name" />
+        <column name="email_address" />
+    </columns>
+    <conditions>
+        <condition operation="in" column="member_srl" var="members" />
+    </conditions>
+</query>

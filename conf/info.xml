@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <title xml:lang="en">Newsletter</title>
+    <description xml:lang="en">Create newsletter for members</description>
+    <version>1</version>
+    <date>2011-11-16</date>
+    <category>service</category>
+    <author email_address="xe_dev@arnia.ro" link="http://www.xpressengine.org/">
+        <name xml:lang="en">Arnia</name>
+    </author>
+</module>
