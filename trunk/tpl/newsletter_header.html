@@ -1,0 +1,22 @@
+<!--%import("css/button.css")-->
+<!--%import("css/newsletter.css")-->
+<!--%import("js/newsletter_admin.js")-->
+
+<!-- HEADER -->
+
+<h3 class="xeAdmin">{$lang->newsletter} <span class="gray">{$lang->cmd_management}</span></h3>
+
+<div class="infoText">{nl2br($lang->about_newsletter)}</div>
+<div >
+        <a href="{getUrl('act','dispNewsletterAdminIndex')}" class="button"><span>{$lang->cmd_make}</span></a>
+</div>
+
+
+<div class="header4">
+    <ul class="localNavigation">
+
+        <li <!--@if($act=='dispNewsletterAdminIndex')-->class="on"<!--@end-->><a href="{getUrl('','module','admin','act','dispNewsletterAdminIndex')}">{$lang->newsletter_form}</a></li>
+        <li <!--@if($act=='dispNewsletterAdminHistory')-->class="on"<!--@end-->><a href="{getUrl('','module','admin','act','dispNewsletterAdminHistory')}">{$lang->newsletter_history}</a></li>
+
+    </ul>
+</div>

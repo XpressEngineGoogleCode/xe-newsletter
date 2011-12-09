@@ -1,0 +1,27 @@
+<query id="getNewsletterHistory" action="select">
+    <tables>
+        <table name="newsletter" />
+        <table name="files" />
+    </tables>
+    <columns>
+        <column name="newsletter.news_srl" />
+        <column name="newsletter.sender_srl" />
+        <column name="newsletter.title" />
+        <column name="newsletter.content" />
+        <column name="newsletter.members_list_to" />
+        <column name="newsletter.members_list_cc" />
+        <column name="newsletter.members_list_bcc" />
+        <column name="newsletter.file_attach" />
+        <column name="files.source_filename" />
+        <column name="files.uploaded_filename" />
+        <column name="newsletter.save_date" />
+        <column name="newsletter.update_date" />
+        <column name="newsletter.send_date" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="files.file_srl" default="newsletter.file_attach" />
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="save_date" order="desc" />
+    </navigation>
+</query>
